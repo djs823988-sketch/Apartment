@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2 Bedroom Apartment for Rent | Saint Louis, MO</title>
+
+  <style>
+    :root {
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #111827;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 40px;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+    }
+
+    .details {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .address {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .fact span {
+      display: block;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+
+    .apply {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .apply h2 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea, button {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Apartment for Rent</h1>
+  <p>Saint Louis, MO 63147</p>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <!-- MAIN IMAGE -->
+    <img src="apartment.png" alt="Modern apartment interior">
+  </section>
+
+  <aside class="details">
+    <div class="price">$1,000 / month</div>
+    <div class="address">Saint Louis, MO 63147</div>
+
+    <div class="facts">
+      <div class="fact"><span>Bedrooms</span>2</div>
+      <div class="fact"><span>Bathrooms</span>1</div>
+      <div class="fact"><span>Square Feet</span>900</div>
+      <div class="fact"><span>Application Fee</span>$30</div>
+    </div>
+
+    <div class="description">
+      Step into your dream home! This stunningly updated apartment features a sun-drenched living room that opens directly onto a private balcony—perfect for your morning coffee. You’ll love cooking in the modern kitchen complete with stainless steel appliances and sparkling granite countertops, then unwinding in the spacious, plush bedrooms. Don’t miss out on this turn-key gem; it’s ready for you to move right in!
+    </div>
+
+    <div class="apply">
+      <h2>Rental Application</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number">
+        <textarea placeholder="Message / Questions"></textarea>
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </aside>
+
+</main>
+
+<footer>
+  © 2026 Demo Apartment Listing · Zillow-style UI
+</footer>
+
+</body>
+</html>
