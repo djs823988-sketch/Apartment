@@ -8,13 +8,13 @@
 
   <style>
     :root {
-      --bg: #f0f4f8;
+      --bg: #f8fafc;
       --card: #ffffff;
-      --text: #2d3748;
-      --muted: #718096;
-      --accent: #2c7a7b; /* Elegant Teal */
-      --secondary: #ed64a6; /* Soft Pink for highlights */
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #0f766e; /* Deep Teal */
       --border: #e2e8f0;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -32,123 +32,117 @@
 
     header {
       background: var(--card);
-      border-bottom: 3px solid var(--accent);
-      padding: 30px 40px;
+      border-bottom: 4px solid var(--accent);
+      padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-top: 5px;
     }
 
     .container {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 40px auto;
-      padding: 0 24px;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: 1.5fr 1fr; /* Gallery on left, info on right */
-      gap: 32px;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 40px;
     }
 
-    /* Left Side: Photo Gallery */
+    /* Left Side: Photo Grid */
     .gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .gallery img {
       width: 100%;
-      height: 250px;
+      height: 300px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
       transition: transform 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: block;
     }
 
+    /* Make the first living room shot the "Hero" */
     .gallery img:first-child {
       grid-column: span 2;
-      height: 450px;
+      height: 500px;
     }
 
     .gallery img:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
-    /* Right Side: Details Card */
+    /* Right Side: Details */
     .details {
       background: var(--card);
-      border-radius: 20px;
-      padding: 35px;
-      border: none;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      height: sticky;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      position: sticky;
       top: 20px;
-      align-self: start;
+      height: fit-content;
     }
 
     .price {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .address {
-      font-weight: 400;
+      font-size: 1.2rem;
       color: var(--muted);
-      margin-bottom: 25px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      margin-bottom: 30px;
     }
 
     .facts {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      background: #f1f5f9;
+      padding: 25px;
+      border-radius: 16px;
       margin-bottom: 30px;
-      padding: 20px;
-      background: #f7fafc;
-      border-radius: 12px;
     }
 
     .fact span {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: 700;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .fact strong {
-      font-size: 1.1rem;
-      color: var(--text);
+      font-size: 1.2rem;
     }
 
     .description {
-      font-size: 1rem;
-      color: #4a5568;
-      margin-bottom: 30px;
-      border-left: 4px solid var(--accent);
-      padding-left: 15px;
-    }
-
-    .apply {
-      border-top: 2px solid var(--border);
-      padding-top: 25px;
+      font-size: 1.05rem;
+      margin-bottom: 35px;
+      color: #334155;
     }
 
     .apply h2 {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      color: var(--text);
+      margin-bottom: 20px;
+      font-size: 1.4rem;
     }
 
     form {
@@ -157,14 +151,14 @@
     }
 
     input, textarea {
-      padding: 14px;
-      border-radius: 8px;
+      padding: 15px;
+      border-radius: 10px;
       border: 2px solid var(--border);
       font-size: 1rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.3s;
     }
 
-    input:focus, textarea:focus {
+    input:focus {
       outline: none;
       border-color: var(--accent);
     }
@@ -173,87 +167,81 @@
       background: var(--accent);
       color: white;
       border: none;
-      padding: 16px;
-      border-radius: 8px;
+      padding: 18px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 1rem;
       cursor: pointer;
-      text-transform: uppercase;
+      font-size: 1rem;
       transition: background 0.3s;
     }
 
     button:hover {
-      background: #285e61;
+      background: #134e4a;
     }
 
     footer {
       text-align: center;
-      padding: 50px;
+      padding: 60px 20px;
+      background: white;
+      margin-top: 60px;
       color: var(--muted);
-      font-size: 0.9rem;
     }
 
-    /* Tablet/Phone Layout */
     @media (max-width: 1024px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .gallery img:first-child {
-        height: 350px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-      .gallery img:first-child {
-        grid-column: span 1;
-      }
+      .container { grid-template-columns: 1fr; }
+      .gallery img:first-child { height: 400px; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Premium Living</h1>
-  <p>Available Now in Saint Louis, MO 63147</p>
+  <h1>Saint Louis Modern Living</h1>
+  <p>Two Bedroom Luxury Apartment • Available Now</p>
 </header>
 
 <main class="container">
 
   <section class="gallery">
-    <img src="living-1.webp" alt="Spacious Living Room">
-    <img src="kitchen.webp" alt="Modern Kitchen">
-    <img src="bathroom.webp" alt="Clean Bathroom">
-    <img src="bedroom-1.webp" alt="Main Bedroom">
-    <img src="bedroom-2.webp" alt="Second Bedroom">
-    <img src="laundry.webp" alt="In-unit Laundry">
+    <img src="81d2acfbd17ab8b20f41a16d3a259d17-cc_ft_960.webp" alt="Living Room">
+    
+    <img src="db0833caccdf5f31fdcfe887c86861d4-cc_ft_576.webp" alt="Kitchen">
+    
+    <img src="10f15d880ca114b2ad2e35efd8e5a3c7-cc_ft_576.webp" alt="Main Bedroom">
+    
+    <img src="6e4f7b7e617ece2a932c9661077d33e9-cc_ft_576.webp" alt="Second Bedroom">
+
+    <img src="0fd5907895d8b5ab2eb32fc1e5a8755d-cc_ft_960.webp" alt="Bathroom">
+    
+    <img src="8a4c7f118d20374e14322ec0d0850a70-cc_ft_576.webp" alt="Laundry Room">
+
+    <img src="5e5fcfe3c9b81014986bb382461a9595-cc_ft_576.webp" alt="Living Area View">
+    <img src="4b2d02c5caa6fd7ec54976feeef9896f-cc_ft_576.webp" alt="Bedroom View">
   </section>
 
   <aside class="details">
-    <div class="price">$1,000<span style="font-size: 1rem; color: var(--muted);"> / mo</span></div>
+    <div class="price">$1,000<span style="font-size: 1rem; color: var(--muted);">/month</span></div>
     <div class="address">📍 Saint Louis, MO 63147</div>
 
     <div class="facts">
       <div class="fact"><span>Bedrooms</span><strong>2 Beds</strong></div>
       <div class="fact"><span>Bathrooms</span><strong>1 Bath</strong></div>
-      <div class="fact"><span>Square Feet</span><strong>900 sqft</strong></div>
+      <div class="fact"><span>Size</span><strong>900 sqft</strong></div>
       <div class="fact"><span>App Fee</span><strong>$30</strong></div>
     </div>
 
     <div class="description">
-      Step into your dream home! This stunningly updated apartment features a sun-drenched living room with wood-style flooring and modern acoustic paneling. You’ll love the updated kitchen and the convenience of in-unit laundry. Ready for immediate move-in!
+      Experience comfort in this freshly updated 2-bedroom home. Featuring sleek wood-style flooring, a fully equipped kitchen with stainless steel appliances, and a dedicated laundry area. Located in a quiet neighborhood with easy access to the best of St. Louis.
     </div>
 
     <div class="apply">
-      <h2>Schedule a Tour</h2>
+      <h2>Rental Inquiry</h2>
       <form>
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email Address" required>
-        <textarea placeholder="Tell us when you'd like to visit..."></textarea>
-        <button type="submit">Send Inquiry</button>
+        <input type="tel" placeholder="Phone Number">
+        <textarea placeholder="When would you like to move in?"></textarea>
+        <button type="submit">Contact Property Manager</button>
       </form>
     </div>
   </aside>
@@ -261,7 +249,7 @@
 </main>
 
 <footer>
-  © 2026 Luxury Rentals STL · High-Quality Living Spaces
+  © 2026 Premium Apartment Listing · Saint Louis, MO
 </footer>
 
 </body>
